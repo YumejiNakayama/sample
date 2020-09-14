@@ -9,8 +9,11 @@
 
 @section('content')
 <p>ここが本文</p>
-<p>必要なだけ記述</p>
+<ul>
+    @each('components.item', $data, 'item', '')
+</ul>
 
+@include('components.message',['msg_title'=>'OK','msg_content'=>'サブビューです。'])
 @endsection
 
 @section('footer')
