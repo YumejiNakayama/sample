@@ -23,7 +23,7 @@ class HelloServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('hello.index', function ($view) {
+        view()->composer('hello.index', function ($view) { //github ups
             $view->with('view_message', 'composer message!');
         });
         //
