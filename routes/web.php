@@ -11,6 +11,10 @@
 |
 */
 
+// use App\Http\Middleware\HelloMiddleware;
+
+use App\Http\Middleware\HelloMiddleware;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -22,3 +26,5 @@ Route::get('/', function () {
 Route::get('hello', 'hellocontroller@index');
 
 Route::post('hello', 'hellocontroller@post');
+
+Route::get('hello', 'hellocontroller@index')->middleware('helo');
