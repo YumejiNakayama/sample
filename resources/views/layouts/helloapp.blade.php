@@ -47,6 +47,11 @@
             border-bottom: solid 1px #ccc;
             color: #ccc;
         }
+
+        .error {
+            font-size: 50%;
+            color: red;
+        }
     </style>
 </head>
 
