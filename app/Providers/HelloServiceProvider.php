@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Validators\HelloValidator;
 
 class HelloServiceProvider extends ServiceProvider
 {
@@ -23,7 +25,10 @@ class HelloServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('hello.index', 'App\Http\Composers\Hellocomposer');
+        $validator = $this->app['validator'];
+        $validator->resolver(function ($translator, $data, $rulus, $messages) {
+            return new HelloValidator($translator, $data, $rulus, $messages);
+        });
         //
     }
 }
