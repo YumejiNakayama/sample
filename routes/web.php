@@ -13,6 +13,7 @@
 
 // use App\Http\Middleware\HelloMiddleware;
 
+use App\Http\Controllers\HelloController;
 use App\Http\Middleware\HelloMiddleware;
 
 Route::get('/', function () {
@@ -24,3 +25,12 @@ Route::get('hello', 'hellocontroller@index');
 Route::post('hello', 'hellocontroller@post');
 
 Route::get('hello', 'hellocontroller@index')->middleware('helo');
+
+Route::get('hello/add', 'HelloController@add');
+Route::post('hello/add', 'hellocontroller@create');
+
+Route::get('hello/edit', 'HelloController@edit');
+Route::post('hello/edit', 'HelloController@update');
+
+Route::get('hello/del', 'helloController@del');
+Route::post('hello/del', 'HelloController@remove');
