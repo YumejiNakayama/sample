@@ -1,28 +1,27 @@
 @extends('layouts.helloapp')
 
-@section('title','Edit')
+@section('title','Delete')
 
 @section('menubar')
 @parent
-更新ページ
+削除ページ
 @endsection
 
 @section('content')
 <table>
-    <form action="/hello/edit" method="post">
+    <form action="/hello/del" method="post">
         {{ csrf_field() }}
         <input type="hidden" name="id" value="{{$form->id}}">
-
         <tr>
             <th>name:</th>
             <td><input type="text" name="name" id="" value="{{$form->name}}"></td>
         </tr>
         <tr>
-            <th>mail:</th>
+            <th>mail</th>
             <td><input type="text" name="mail" id="" value="{{$form->mail}}"></td>
         </tr>
         <tr>
-            <th>age:</th>
+            <th>age</th>
             <td><input type="text" name="age" id="" value="{{$form->age}}"></td>
         </tr>
         <tr>
@@ -30,9 +29,6 @@
             <td><input type="submit" value="send"></td>
         </tr>
     </form>
-</table>
-@endsection
 
-@section('footer')
-copyright 2017 tuyano.
+</table>
 @endsection
