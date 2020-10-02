@@ -83,10 +83,10 @@ class HelloController extends Controller
 
     public function show(Request $request)
     {
-        $name = $request->name;
+        $page = $request->page;
         $items = DB::table('people')
-            ->where('name', 'like', '%' . $name . '%')
-            ->orWhere('mail', 'like', '%' . $name . '%')
+            ->offset($page * 3)
+            ->limit(3)
             ->get();
         return view('hello.show', ['items' => $items]);
     }
