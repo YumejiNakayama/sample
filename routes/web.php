@@ -38,3 +38,5 @@ Route::post('hello/edit', 'HelloController@update');
 
 Route::get('hello/del', 'helloController@del');
 Route::post('hello/del', 'HelloController@remove');
+
+Route::get('hello/show', 'HelloController@show');
